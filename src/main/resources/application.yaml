@@ -8,3 +8,5 @@ spring:
       pricing-tier: PREMIUM
       prefetch-policy:
         all: 1
+  profiles:
+    active: develop
