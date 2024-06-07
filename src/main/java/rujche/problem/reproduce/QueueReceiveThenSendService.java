@@ -6,10 +6,11 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
+import static rujche.problem.reproduce.QueueName.QUEUE_NAME_1;
+import static rujche.problem.reproduce.QueueName.QUEUE_NAME_2;
+
 @Service
 public class QueueReceiveThenSendService {
-    private static final String RECEIVE_QUEUE_NAME = "que001";
-    private static final String SEND_QUEUE_NAME = "que002";
     private final Logger LOGGER = LoggerFactory.getLogger(QueueReceiveThenSendService.class);
 
     private final JmsTemplate jmsTemplate;
@@ -18,11 +19,11 @@ public class QueueReceiveThenSendService {
         this.jmsTemplate = jmsTemplate;
     }
 
-    @JmsListener(destination = RECEIVE_QUEUE_NAME, containerFactory = "jmsListenerContainerFactory")
+    @JmsListener(destination = QUEUE_NAME_1, containerFactory = "jmsListenerContainerFactory")
     public void receiveMessage(String message) {
-        LOGGER.info("Received message. queue name = {}, message = {}.", RECEIVE_QUEUE_NAME, message);
-        LOGGER.info("Sending message. queue name = {}, message = {}", SEND_QUEUE_NAME, message);
-        jmsTemplate.convertAndSend(SEND_QUEUE_NAME, message);
-        LOGGER.info("Send message succeed. queue name = {}, message = {}", SEND_QUEUE_NAME, message);
+        LOGGER.info("Received message. queue name = {}, message = {}.", QUEUE_NAME_1, message);
+        LOGGER.info("Sending message. queue name = {}, message = {}", QUEUE_NAME_2, message);
+        jmsTemplate.convertAndSend(QUEUE_NAME_2, message);
+        LOGGER.info("Send message succeed. queue name = {}, message = {}", QUEUE_NAME_2, message);
     }
 }

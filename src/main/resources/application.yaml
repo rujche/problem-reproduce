@@ -1,10 +1,23 @@
 spring:
   application:
     name: problem-reproduce
+    # FYI: I (rujche) use AzureCliCredential.
+    # It's not required to run this sample, you can use other method instead.
+    # For example: client-id and client-secret.
+    #  cloud:
+    #    azure:
+    #      credential:
+    #        client-id:
+    #        client-secret:
   jms:
     servicebus:
-      connection-string: "****"
+      # FYI: I (rujche) use AzureCliCredential.
+      # It's not required to run this sample, you can use other method instead.
+      # For example: connection-string.
+      # connection-string:
+      namespace:
       idle-timeout: 1800000
+      passwordless-enabled: true # Set false if you use connection-string.
       pricing-tier: PREMIUM
       prefetch-policy:
         all: 1
