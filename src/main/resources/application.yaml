@@ -2,17 +2,17 @@ spring:
   application:
     name: problem-reproduce
     # FYI: I (rujche) use AzureCliCredential.
-    # It's not required to run this sample, you can use other method instead.
+    # Use AzureCliCredential not required to run this sample, you can use other method instead.
     # For example: client-id and client-secret.
-    #  cloud:
-    #    azure:
-    #      credential:
-    #        client-id:
-    #        client-secret:
+    # cloud:
+    #   azure:
+    #     credential:
+    #       client-id:
+    #       client-secret:
   jms:
     servicebus:
       # FYI: I (rujche) use AzureCliCredential.
-      # It's not required to run this sample, you can use other method instead.
+      # Use AzureCliCredential not required to run this sample, you can use other method instead.
       # For example: connection-string.
       # connection-string:
       namespace:

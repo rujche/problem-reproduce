@@ -1,4 +1,4 @@
-package rujche.problem.reproduce;
+package rujche.problem.reproduce.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
-import static rujche.problem.reproduce.QueueName.QUEUE_NAME_1;
+import static rujche.problem.reproduce.constant.QueueNameConstant.QUEUE_NAME_1;
 
 @Service
 public class PeriodMessageSender {
