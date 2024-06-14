@@ -1,5 +1,10 @@
 # Problem Reproduce
 
+## Latest information
+
+Problem solved by upgrading spring-framework's version to **6.2.0-M4**.
+Link to related issue: https://github.com/spring-projects/spring-framework/issues/28676
+
 ## Steps to reproduce this problem
 
 Run the following comment in current project's root directory:
