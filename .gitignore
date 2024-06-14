@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Loacl development files
+**/application-develop.yml
+**/application-develop.yaml
+**/application-develop.properties

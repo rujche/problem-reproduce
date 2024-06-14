@@ -1,0 +1,5 @@
+property-one:
+  value: property-one-value
+property-two:
+  value: property-two-value
+debug: true
