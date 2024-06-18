@@ -1,9 +1,9 @@
 package rujche.problem.reproduce;
 
 import com.azure.spring.data.cosmos.config.AbstractCosmosConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.context.annotation.Conditional;
 
-@ConditionalOnClass(SubModuleOneAllNestedCondition.class)
+@Conditional(SubModuleOneAllNestedCondition.class)
 public class SubModuleOneAllNestedConditionConfiguration extends AbstractCosmosConfiguration {
 
     @Override
