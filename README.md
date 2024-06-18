@@ -1,10 +1,18 @@
 ## Steps to reproduce this problem
 
-Run the following comment in current project's root directory:
-
-```shell
-./mvnw clean test
-```
+1. Run the following command in current project's root directory:
+    ```shell
+    ./mvnw clean test
+    ```
+2. Update file [sub-module-one/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports](sub-module-one/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports).
+Change **SecondAutoConfiguration** to **FirstAutoConfiguration**. Make it like this:
+    ```text
+    rujche.problem.reproduce.FirstAutoConfiguration
+    ```
+3. Run the following command again:
+    ```shell
+    ./mvnw clean test
+    ```
 
 ### Expected behavior
 
@@ -15,16 +23,10 @@ Expect all tests passed.
 Actually, build failed with error log like this:
 
 ```text
-Caused by: java.lang.ClassNotFoundException: com.azure.spring.data.cosmos.config.AbstractCosmosConfiguration
-        at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
-        at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-        at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
-        ... 116 common frames omitted
-
-[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.263 s <<< FAILURE! -- in rujche.problem.reproduce.SubModuleTwoAllNestedConditionTest
-...
+Caused by: java.io.FileNotFoundException: class path resource [com/azure/spring/data/cosmos/config/AbstractCosmosConfiguration.class] cannot be opened because it does not exist
 ```
 
-### More details
+### More information
 
-For more details, please read the source code.
+1. IMU, **FirstAutoConfiguration** and **SecondAutoConfiguration** should have same behavior about **FileNotFoundException**. But it's not.
+2. For more details, please read the source code.

@@ -4,9 +4,9 @@ import com.azure.spring.data.cosmos.core.CosmosTemplate;
 import org.springframework.boot.autoconfigure.condition.AllNestedConditions;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 
-public class SubModuleOneAllNestedCondition extends AllNestedConditions {
+public class FirstCondition extends AllNestedConditions {
 
-    SubModuleOneAllNestedCondition() {
+    FirstCondition() {
         super(ConfigurationPhase.REGISTER_BEAN);
     }
 
