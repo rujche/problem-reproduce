@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 public class FirstCondition extends AllNestedConditions {
 
     FirstCondition() {
-        super(ConfigurationPhase.REGISTER_BEAN);
+        super(ConfigurationPhase.PARSE_CONFIGURATION);
     }
 
     @ConditionalOnClass(CosmosTemplate.class)

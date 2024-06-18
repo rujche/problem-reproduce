@@ -1,3 +1,10 @@
+## Latest information
+This problem has been solved by changing **FirstCondition**'s **ConfigurationPhase** to **PARSE_CONFIGURATION**.
+
+More information:
+1. **ConfigurationPhase**'s java doc.
+2. @wilkinsona 's [comment](https://github.com/wilkinsona/problem-reproduce/commit/be1ace28693f7b532167f066ba89443079d965f6#r143241687): **PARSE_CONFIGURATION is, essentially, the default phase. It happens first and you want to exclude things as early as possible. REGISTER_BEAN is only necessary when evaluation depends on the state of the bean factory**.
+
 ## Steps to reproduce this problem
 
 1. Run the following command in current project's root directory:
