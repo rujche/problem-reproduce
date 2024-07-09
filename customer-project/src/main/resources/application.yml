@@ -1,0 +1,9 @@
+# debug: true
+spring:
+  application:
+    name: problem-reproduce
+  cloud:
+    azure:
+      enabled: true
+      subscription-id: subscription-id-in-application-yml
+      resource-group: resource-group-in-application-yml
